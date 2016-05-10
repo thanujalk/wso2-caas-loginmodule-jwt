@@ -24,10 +24,10 @@ import com.nimbusds.jwt.SignedJWT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wso2.carbon.kernel.context.PrivilegedCarbonContext;
-import org.wso2.carbon.security.caas.internal.CarbonSecurityDataHolder;
 import org.wso2.carbon.security.caas.jaas.CarbonCallback;
 import org.wso2.carbon.security.caas.jaas.CarbonPrincipal;
 import org.wso2.carbon.security.caas.jaas.util.CarbonSecurityConstants;
+import org.wso2.carbon.security.caas.module.jwt.internal.JWTLoginModuleDataHolder;
 import org.wso2.carbon.security.caas.user.core.bean.User;
 import org.wso2.carbon.security.caas.user.core.exception.IdentityStoreException;
 
@@ -144,7 +144,7 @@ public class JWTLoginModule implements LoginModule {
                 ReadOnlyJWTClaimsSet claimsSet = signedJWT.getJWTClaimsSet();
                 User user;
                 try {
-                    user = CarbonSecurityDataHolder.getInstance().getCarbonRealmService().getIdentityStore()
+                    user = JWTLoginModuleDataHolder.getInstance().getCarbonRealmService().getIdentityStore()
                             .getUser(claimsSet.getSubject());
                 } catch (IdentityStoreException e) {
                     throw new LoginException("User with name '" + claimsSet.getSubject() + "' is not available");

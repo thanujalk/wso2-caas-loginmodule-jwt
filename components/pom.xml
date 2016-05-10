@@ -50,6 +50,10 @@
         </dependency>
         <dependency>
             <groupId>org.wso2.carbon.security.caas</groupId>
+            <artifactId>org.wso2.carbon.security.caas.boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.security.caas</groupId>
             <artifactId>org.wso2.carbon.security.caas</artifactId>
         </dependency>
         <dependency>
@@ -76,7 +80,9 @@
             org.wso2.carbon.security.*;version="${org.wso2.carbon.security.version.range}",
             com.nimbusds.jose.*;version="${com.nimbusds.package.import.version.range}",
             com.nimbusds.jwt.*;version="${com.nimbusds.package.import.version.range}",
-            net.minidev.asm.*;version="${asm.package.version.range}"
+            net.minidev.asm.*;version="${asm.package.version.range}",
+            org.wso2.carbon.kernel.*,
+            org.wso2.carbon.messaging.*,
         </import.package>
 
         <dsannotations>*</dsannotations>

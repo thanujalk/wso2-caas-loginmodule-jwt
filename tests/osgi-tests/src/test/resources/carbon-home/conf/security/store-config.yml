@@ -8,20 +8,20 @@ authorizationStore:
 storeConnectors:
  -
   name: "JDBCCS1"
-  connectorType: "JDBCCredentialStore"
+  connectorType: "InMemoryCredentialStore"
   properties:
    dataSource: "WSO2_CARBON_DB"
    hashAlgorithm: "SHA-256"
    databaseType: "MySQL"
  -
   name: "JDBCIS1"
-  connectorType: "JDBCIdentityStore"
+  connectorType: "InMemoryIdentityStore"
   properties:
    dataSource: "WSO2_CARBON_DB"
    databaseType: "MySQL"
  -
   name: "JDBCAS1"
-  connectorType: "JDBCAuthorizationStore"
+  connectorType: "InMemoryAuthorizationStore"
   properties:
    dataSource: "WSO2_CARBON_DB"
    databaseType: "MySQL"

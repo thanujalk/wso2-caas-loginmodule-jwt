@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright (c) 2016, WSO2 Inc. (http://wso2.com) All Rights Reserved.
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~ http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
+ Copyright (c) 2016, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -25,12 +25,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>org.wso2.carbon.security.caas.module.jwt.test.osgi</artifactId>
-    <packaging>bundle</packaging>
-
     <name>WSO2 Carbon Security CAAS JWT Login Module - OSGi Tests</name>
-    <url>http://maven.apache.org</url>
+    <url>http://wso2.com</url>
 
     <build>
         <extensions>
@@ -54,6 +51,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.wso2.carbon.security.caas</groupId>
+            <artifactId>org.wso2.carbon.security.caas</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.wso2.carbon.security.caas.module</groupId>
             <artifactId>org.wso2.carbon.security.caas.module.jwt</artifactId>
         </dependency>
@@ -65,6 +66,10 @@
             <groupId>org.wso2.carbon</groupId>
             <artifactId>osgi-test-util</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.security.caas</groupId>
+            <artifactId>org.wso2.carbon.security.caas.userstore.inmemory</artifactId>
         </dependency>
 
         <!-- Pax Exam Dependencies-->
@@ -269,57 +274,6 @@
                                     <goal>generate-depends-file</goal>
                                 </goals>
                             </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>sql-maven-plugin</artifactId>
-                        <dependencies>
-                            <dependency>
-                                <groupId>com.h2database</groupId>
-                                <artifactId>h2</artifactId>
-                                <version>1.4.191</version>
-                            </dependency>
-                        </dependencies>
-                        <configuration>
-                            <url>
-                                jdbc:h2:file:${basedir}/target/carbon-home/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000;MV_STORE=FALSE
-                            </url>
-                            <username>wso2carbon</username>
-                            <password>wso2carbon</password>
-                            <driver>org.h2.Driver</driver>
-                        </configuration>
-                        <executions>
-                            <!--Create the database-->
-                            <!--execution>
-                                <id>create-database</id>
-                                <phase>generate-resources</phase>
-                                <goals>
-                                    <goal>execute</goal>
-                                </goals>
-                                <configuration>
-                                    <autocommit>true</autocommit>
-                                    <srcFiles>
-                                        <srcFile>${basedir}/../../feature/resources/database/WSO2CARBON_DB.sql</srcFile>
-                                    </srcFiles>
-                                    <onError>abort</onError>
-                                </configuration>
-                            </execution-->
-                            <!--Add mock data to the database.-->
-                            <!--<execution>-->
-                                <!--<id>add-mock-data</id>-->
-                                <!--<phase>generate-resources</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>execute</goal>-->
-                                <!--</goals>-->
-                                <!--<configuration>-->
-                                    <!--<autocommit>true</autocommit>-->
-                                    <!--<srcFiles>-->
-                                        <!--<srcFile>${basedir}/src/test/resources/h2_test_data.sql</srcFile>-->
-                                    <!--</srcFiles>-->
-                                    <!--<onError>abort</onError>-->
-                                <!--</configuration>-->
-                            <!--</execution>-->
                         </executions>
                     </plugin>
                 </plugins>
