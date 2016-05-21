@@ -140,6 +140,16 @@
                 <artifactId>org.wso2.carbon.security.caas.module.jwt</artifactId>
                 <version>${org.wso2.carbon.security.caas.module.jwt.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.orbit.com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.minidev</groupId>
+                <artifactId>asm</artifactId>
+                <version>${net.minidev.asm.version}</version>
+            </dependency>
 
             <!-- OSGI Tests-->
             <dependency>
@@ -147,12 +157,6 @@
                 <artifactId>json-smart</artifactId>
                 <version>${json.smart.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.wso2.orbit.com.nimbusds</groupId>
-                <artifactId>nimbus-jose-jwt</artifactId>
-                <version>${nimbus.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>osgi-test-util</artifactId>
@@ -232,17 +236,12 @@
                 <artifactId>commons-dbcp</artifactId>
                 <version>${commons.dbcp.version}</version>
             </dependency>
-            <dependency>
-                <groupId>net.minidev</groupId>
-                <artifactId>asm</artifactId>
-                <version>${net.minidev.asm.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <properties>
         <carbon.security.caas.version>1.0.0-SNAPSHOT</carbon.security.caas.version>
-        <org.wso2.carbon.messaging.version>1.0.2</org.wso2.carbon.messaging.version>
+        <org.wso2.carbon.messaging.version>1.0.3</org.wso2.carbon.messaging.version>
         <org.wso2.carbon.security.caas.module.jwt.version>1.0.0-SNAPSHOT
         </org.wso2.carbon.security.caas.module.jwt.version>
 

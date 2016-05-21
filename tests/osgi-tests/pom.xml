@@ -114,7 +114,6 @@
             <scope>test</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.wso2.orbit.com.nimbusds</groupId>
             <artifactId>nimbus-jose-jwt</artifactId>

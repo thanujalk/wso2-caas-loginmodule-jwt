@@ -104,6 +104,10 @@
                                     <symbolicName>org.wso2.carbon.security.caas.module.jwt</symbolicName>
                                     <version>${org.wso2.carbon.security.caas.module.jwt.version}</version>
                                 </bundle>
+                                <bundle>
+                                    <symbolicName>nimbus-jose-jwt</symbolicName>
+                                    <version>${nimbus.version}</version>
+                                </bundle>
                             </bundles>
                         </configuration>
                     </execution>

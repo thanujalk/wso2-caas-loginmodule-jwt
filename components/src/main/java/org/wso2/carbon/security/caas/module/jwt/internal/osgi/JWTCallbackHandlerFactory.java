@@ -19,7 +19,7 @@ package org.wso2.carbon.security.caas.module.jwt.internal.osgi;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.PrototypeServiceFactory;
 import org.osgi.framework.ServiceRegistration;
-import org.wso2.carbon.security.caas.jaas.CarbonCallbackHandler;
+import org.wso2.carbon.security.caas.api.CarbonCallbackHandler;
 import org.wso2.carbon.security.caas.module.jwt.JWTCallbackHandler;
 
 /**

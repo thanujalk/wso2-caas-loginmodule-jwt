@@ -20,9 +20,9 @@ import com.nimbusds.jwt.SignedJWT;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wso2.carbon.messaging.CarbonMessage;
-import org.wso2.carbon.security.caas.jaas.CarbonCallback;
-import org.wso2.carbon.security.caas.jaas.CarbonCallbackHandler;
-import org.wso2.carbon.security.caas.jaas.util.CarbonSecurityConstants;
+import org.wso2.carbon.security.caas.api.CarbonCallback;
+import org.wso2.carbon.security.caas.api.CarbonCallbackHandler;
+import org.wso2.carbon.security.caas.api.util.CarbonSecurityConstants;
 
 import java.io.IOException;
 import java.text.ParseException;
